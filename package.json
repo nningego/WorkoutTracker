@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios --simulator \"iPhone 8\"",
     "test": "jest"
   },
   "dependencies": {
@@ -12,11 +14,28 @@
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
+    "grunt": "~1.0.3",
+    "grunt-run": "~0.8.1",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.51.1",
-    "react-test-renderer": "16.6.3"
+    "react-test-renderer": "16.6.3",
+    "sinon": "~7.2.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/test-utils.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/node_modules/react-native/jest/setup.js",
+      "<rootDir>/src/__setup__/testHelpers.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   }
 }

@@ -29,8 +29,8 @@ create() {
     echo no | avdmanager create avd --force \
         --name "$avd_name" \
         --device "$device_name" \
-        --abi google_apis/x86_64 \
-        --package "system-images;android-28;google_apis;$(uname -m)"
+        --abi google_apis_playstore/x86 \
+        --package "system-images;android-28;google_apis_playstore;x86"
 }
 
 start() {
@@ -46,6 +46,9 @@ start() {
 
 usage() {
 cat <<EOF
+Setup in your bashrc/zsh:
+export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
 Usage:
 
 $0 <command> <args>
@@ -54,10 +57,13 @@ command : 'devices', 'list', 'start' or 'create'
 args    : Name of the device for create
 
 Create Example:
-$(basename $0) create ourtestPixelDevice pixel
+$(basename $0) create Pixel pixel
+
+List Example:
+$(basename $0) list
 
 Start Example:
-$(basename $0) start ourtestPixelDevice
+$(basename $0) start Pixel
 EOF
 
 exit 1
