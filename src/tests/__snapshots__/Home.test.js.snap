@@ -20,7 +20,7 @@ exports[`<Home/> test 1`] = `
       }
     }
   >
-    Welcome to React Native!
+    Track workouts here
   </Text>
   <Text
     style={
@@ -31,19 +31,10 @@ exports[`<Home/> test 1`] = `
       }
     }
   >
-    To get started, edit App.js
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#333333",
-        "marginBottom": 5,
-        "textAlign": "center",
-      }
-    }
-  >
-    Press Cmd+R to reload,
-Cmd+D or shake for dev menu
+    Version 
+    1.0
+    +
+    1
   </Text>
 </View>
 `;

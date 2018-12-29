@@ -1,21 +1,14 @@
-import { Platform, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import { StyleSheet, Text, View } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 
 export const Home = () => {
-
   return (
     <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>);
+      <Text style={styles.welcome}>Track workouts here</Text>
+      <Text
+        style={styles.instructions}>Version {DeviceInfo.getVersion()}+{DeviceInfo.getBuildNumber()}</Text>
+    </View>);
 };
 
 const styles = StyleSheet.create({
@@ -36,5 +29,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
 export default Home;
 

@@ -22,10 +22,10 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', 'default tasks', function() {
-    grunt.task.run('test');
+    grunt.task.run('run:install', 'test');
   });
   grunt.registerTask('android', ['run:install', 'run:run_android']);
   grunt.registerTask('ios', ['run:install', 'run:run_ios']);
   grunt.registerTask('server', ['run:install', 'run:run_server']);
-  grunt.registerTask('test', ['run:install', 'run:run_test']);
+  grunt.registerTask('test', ['run:run_test']);
 };
