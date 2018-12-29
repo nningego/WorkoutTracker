@@ -1,0 +1,34 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    // To reduce the complexity in one function
+    "complexity": [
+      "warn",
+      5
+    ],
+    // We are not in the browser, no need to block console
+    "no-console": 0,
+    // Only for api resources, underscores for private methods
+    "no-underscore-dangle": 0,
+    "function-paren-newline": 0
+  }
+}

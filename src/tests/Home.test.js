@@ -5,8 +5,8 @@ import Home from '../Home';
 describe('<Home/>', () => {
   test('test', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<Home/>);
+    renderer.render(<Home />);
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();
-  })
+  });
 });

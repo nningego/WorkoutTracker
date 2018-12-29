@@ -2,15 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 
-export const Home = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Track workouts here</Text>
-      <Text
-        style={styles.instructions}>Version {DeviceInfo.getVersion()}+{DeviceInfo.getBuildNumber()}</Text>
-    </View>);
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -30,5 +21,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+const version = `Version ${DeviceInfo.getVersion()} + ${DeviceInfo.getBuildNumber()}`;
 
+const Home = () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>Track workouts here</Text>
+    <Text style={styles.instructions}>{version}</Text>
+  </View>
+);
+
+export default Home;

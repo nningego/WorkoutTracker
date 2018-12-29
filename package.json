@@ -6,7 +6,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios --simulator \"iPhone 8\"",
-    "test": "jest --watch"
+    "test": "jest",
+    "lint": "eslint src --ext .js",
+    "lint-fix": "eslint --fix src --ext .js"
   },
   "dependencies": {
     "react": "16.6.3",
@@ -14,7 +16,13 @@
     "react-native-device-info": "~0.24.3"
   },
   "devDependencies": {
+    "babel-eslint": "~10.0.1",
     "babel-jest": "23.6.0",
+    "eslint": "~5.11.1",
+    "eslint-config-airbnb": "~17.1.0",
+    "eslint-plugin-import": "~2.14.0",
+    "eslint-plugin-jsx-a11y": "~6.1.2",
+    "eslint-plugin-react": "~7.12.0",
     "grunt": "~1.0.3",
     "grunt-run": "~0.8.1",
     "jest": "23.6.0",

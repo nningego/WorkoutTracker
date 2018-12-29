@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies,no-console */
 import sinon from 'sinon';
 
 const consoleError = console.error;
@@ -8,7 +9,11 @@ console.error = (error, ...args) => {
   consoleError(error, ...args, new Error().stack);
 };
 
-export const fakeDate = () => {
+const fakeDate = () => {
   const now = new Date('January 1, 2015 01:01:01:001 GMT+00:00');
   return sinon.useFakeTimers(now);
+};
+
+export default {
+  fakeDate,
 };
