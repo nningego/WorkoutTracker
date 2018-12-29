@@ -3,9 +3,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     run: {
-      options: {
-        // ...
-      },
       install: {
         exec: 'npm i'
       },
@@ -24,8 +21,11 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['run:install', 'run:run_test']);
+  grunt.registerTask('default', 'default tasks', function() {
+    grunt.task.run('test');
+  });
   grunt.registerTask('android', ['run:install', 'run:run_android']);
   grunt.registerTask('ios', ['run:install', 'run:run_ios']);
   grunt.registerTask('server', ['run:install', 'run:run_server']);
+  grunt.registerTask('test', ['run:install', 'run:run_test']);
 };
