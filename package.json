@@ -27,7 +27,7 @@
     "grunt-run": "~0.8.1",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.51.1",
-    "react-test-renderer": "16.6.3",
+    "react-test-renderer": "16.12.0",
     "sinon": "~7.2.2"
   },
   "jest": {
